@@ -7,5 +7,5 @@
 
 struct Coin: Decodable {
     let name: String
-    let price_usd: Double
+    let price_usd: Float?
 }
