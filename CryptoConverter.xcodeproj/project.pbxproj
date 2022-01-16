@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		FC4035672794430200DB1313 /* CoinCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC4035662794430200DB1313 /* CoinCell.swift */; };
+		FC4035692794B81C00DB1313 /* Icon.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC4035682794B81C00DB1313 /* Icon.swift */; };
 		FC599A41279374CE00410049 /* CoinsCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC599A40279374CE00410049 /* CoinsCollectionViewController.swift */; };
 		FCE0FC8427932E5F00E4A384 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCE0FC8327932E5F00E4A384 /* AppDelegate.swift */; };
 		FCE0FC8627932E5F00E4A384 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCE0FC8527932E5F00E4A384 /* SceneDelegate.swift */; };
@@ -20,6 +21,7 @@
 
 /* Begin PBXFileReference section */
 		FC4035662794430200DB1313 /* CoinCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinCell.swift; sourceTree = "<group>"; };
+		FC4035682794B81C00DB1313 /* Icon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Icon.swift; sourceTree = "<group>"; };
 		FC599A40279374CE00410049 /* CoinsCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinsCollectionViewController.swift; sourceTree = "<group>"; };
 		FCE0FC8027932E5F00E4A384 /* CryptoConverter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CryptoConverter.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FCE0FC8327932E5F00E4A384 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -76,6 +78,7 @@
 			isa = PBXGroup;
 			children = (
 				FCE0FC9727932F6700E4A384 /* Coin.swift */,
+				FC4035682794B81C00DB1313 /* Icon.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -197,6 +200,7 @@
 			files = (
 				FCE0FC8427932E5F00E4A384 /* AppDelegate.swift in Sources */,
 				FCE0FC9C2793344A00E4A384 /* NetworkManager.swift in Sources */,
+				FC4035692794B81C00DB1313 /* Icon.swift in Sources */,
 				FC599A41279374CE00410049 /* CoinsCollectionViewController.swift in Sources */,
 				FCE0FC9827932F6700E4A384 /* Coin.swift in Sources */,
 				FC4035672794430200DB1313 /* CoinCell.swift in Sources */,

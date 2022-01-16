@@ -11,6 +11,7 @@ import UIKit
 
 class CoinsCollectionViewController: UICollectionViewController {
     private var coins: [Coin] = []
+    private var icons: [Icon] = []
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,6 +23,10 @@ class CoinsCollectionViewController: UICollectionViewController {
             DispatchQueue.main.async {
                 self.collectionView.reloadData()
             }
+        }
+        
+        NetworkManager.shared.fetchIcon { icons in
+            self.icons = icons
         }
     }
 
@@ -35,7 +40,8 @@ class CoinsCollectionViewController: UICollectionViewController {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "coin", for: indexPath) as! CoinCell
         
         let coin = coins[indexPath.item]
-        cell.configure(with: coin)
+        cell.configure(with: coin, and: icons)
+        
         return cell
     }
 }
