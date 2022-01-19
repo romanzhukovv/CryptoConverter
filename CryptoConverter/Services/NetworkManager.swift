@@ -6,15 +6,14 @@
 //
 
 import Foundation
+import Alamofire
 
-/*
- Евгения, небольшое пояснение: в JSON для криптовалют не было ссылок на иконки и API предоставляет отдельный JSON
- для них, поэтому пришлось использовать два JSONa и сопоставлять по asset_id иконку и соответсвующую ей криптовалюту.
- 
- Единственный момент - иконки при скроллинге меняются местами и пока не понятно почему так происходит.
- 
- Если найдете в чем проблема, подскажите пожалуйста)
-*/
+enum NetworkError: Error {
+    case invalidURL
+    case noData
+    case decodingError
+}
+
 class NetworkManager {
     static var shared = NetworkManager()
     
@@ -57,4 +56,19 @@ class NetworkManager {
             
         }.resume()
     }
+    
+    func fetchCoinAF(completion: @escaping(Result<[Coin], NetworkError>) -> Void) {
+        AF.request("https://rest-sandbox.coinapi.io/v1/assets/?apikey=A1BD8810-5840-4809-952A-8ECBD0D51E21")
+            .validate()
+            .responseJSON { dataResponce in
+                switch dataResponce.result {
+                case .success(let value):
+                    let coins = Coin.getCoins(from: value)
+                    completion(.success(coins))
+                case .failure:
+                    completion(.failure(.decodingError))
+                }
+            }
+    }
+    
 }

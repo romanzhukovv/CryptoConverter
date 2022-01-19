@@ -16,14 +16,26 @@ class CoinsCollectionViewController: UICollectionViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        NetworkManager.shared.fetchCoin { coins in
-            self.coins = coins
-            self.coins.sort { $0.price_usd ?? 0 > $1.price_usd ?? 0}
-            
-            DispatchQueue.main.async {
+        NetworkManager.shared.fetchCoinAF { result in
+            switch result {
+            case .success(let coins):
+                self.coins = coins
+                self.coins.sort { $0.price_usd ?? 0 > $1.price_usd ?? 0}
                 self.collectionView.reloadData()
+            case .failure(let error):
+                print(error)
             }
+            
         }
+        
+//        NetworkManager.shared.fetchCoin { coins in
+//            self.coins = coins
+//            self.coins.sort { $0.price_usd ?? 0 > $1.price_usd ?? 0}
+//            
+//            DispatchQueue.main.async {
+//                self.collectionView.reloadData()
+//            }
+//        }
         
         NetworkManager.shared.fetchIcon { icons in
             self.icons = icons
