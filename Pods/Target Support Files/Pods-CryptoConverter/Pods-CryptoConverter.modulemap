@@ -1,0 +1,6 @@
+module Pods_CryptoConverter {
+  umbrella header "Pods-CryptoConverter-umbrella.h"
+
+  export *
+  module * { export * }
+}
